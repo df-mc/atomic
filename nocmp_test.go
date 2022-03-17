@@ -56,14 +56,12 @@ func TestNocmpComparability(t *testing.T) {
 		// All exported types must be uncomparable.
 		{desc: "Bool", give: Bool{}},
 		{desc: "Duration", give: Duration{}},
-		{desc: "Error", give: Error{}},
 		{desc: "Float64", give: Float64{}},
 		{desc: "Int32", give: Int32{}},
 		{desc: "Int64", give: Int64{}},
-		{desc: "String", give: String{}},
 		{desc: "Uint32", give: Uint32{}},
 		{desc: "Uint64", give: Uint64{}},
-		{desc: "Value", give: Value{}},
+		{desc: "Value", give: Value[any]{}},
 	}
 
 	for _, tt := range tests {

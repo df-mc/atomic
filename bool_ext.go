@@ -38,16 +38,16 @@ func boolToInt(b bool) uint32 {
 }
 
 // Toggle atomically negates the Boolean and returns the previous value.
-func (b *Bool) Toggle() (old bool) {
+func (x *Bool) Toggle() (old bool) {
 	for {
-		old := b.Load()
-		if b.CAS(old, !old) {
+		old := x.Load()
+		if x.CAS(old, !old) {
 			return old
 		}
 	}
 }
 
 // String encodes the wrapped value as a string.
-func (b *Bool) String() string {
-	return strconv.FormatBool(b.Load())
+func (x *Bool) String() string {
+	return strconv.FormatBool(x.Load())
 }

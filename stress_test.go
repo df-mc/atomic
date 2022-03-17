@@ -238,7 +238,7 @@ func stressBool() func() {
 }
 
 func stressString() func() {
-	var atom String
+	var atom Value[string]
 	return func() {
 		atom.Load()
 		atom.Store("abc")
@@ -262,7 +262,7 @@ func stressDuration() func() {
 }
 
 func stressError() func() {
-	var atom = NewError(nil)
+	var atom Value[error]
 	var err1 = errors.New("err1")
 	var err2 = errors.New("err2")
 	return func() {
@@ -276,7 +276,7 @@ func stressError() func() {
 }
 
 func stressTime() func() {
-	var atom = NewTime(time.Date(2021, 6, 17, 9, 0, 0, 0, time.UTC))
+	var atom = NewValue(time.Date(2021, 6, 17, 9, 0, 0, 0, time.UTC))
 	var dayAgo = time.Date(2021, 6, 16, 9, 0, 0, 0, time.UTC)
 	var weekAgo = time.Date(2021, 6, 10, 9, 0, 0, 0, time.UTC)
 	return func() {

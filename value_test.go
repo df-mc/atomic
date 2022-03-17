@@ -27,7 +27,7 @@ import (
 )
 
 func TestValue(t *testing.T) {
-	var v Value
+	var v Value[any]
 	assert.Nil(t, v.Load(), "initial Value is not nil")
 
 	v.Store(42)

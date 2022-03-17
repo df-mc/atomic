@@ -1,11 +1,12 @@
 # atomic [![GoDoc][doc-img]][doc] [![Build Status][ci-img]][ci] [![Coverage Status][cov-img]][cov] [![Go Report Card][reportcard-img]][reportcard]
 
-Simple wrappers for primitive types to enforce atomic access.
+Simple wrappers for primitive types to enforce atomic access with added support for generics. This is
+a fork of https://github.com/uber-go/atomic.
 
 ## Installation
 
 ```shell
-$ go get -u go.uber.org/atomic@v1
+$ go get -u github.com/df-mc/atomic
 ```
 
 ### Legacy Import Path
